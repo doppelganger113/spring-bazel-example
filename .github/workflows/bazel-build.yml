@@ -20,17 +20,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Install Bazelisk
-        uses: vsco/bazelisk-action@1.1
-        with:
-          # [required]
-          # Version of Bazelisk we would like to install, defaults to 1.5.0
-          version: '1.7.4'
-          # [required]
-          # Install path for Bazelisk binaries, defaults to ./.local/bin
-          bazel-install-path: './.local/bin'
-          # [required]
-          # The OS of the system that wishes to install Bazelisk. Can be 'darwin' or 'linux'
-          os: 'linux'
+      - name: actions-bazelisk
+        uses: suyash/actions-bazelisk@v1
+
       - name: Build
         run: bazelisk build '...'
