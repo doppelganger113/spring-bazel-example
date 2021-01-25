@@ -1,7 +1,6 @@
 java_test(
     name = "HelloControllerTest",
     srcs = ["HelloControllerTest.java"],
-    test_class = "hello.HelloControllerTest",
     deps = [
         "//api/src/main/java/com/example/myproject:lib",
         "@maven//:org_hamcrest_hamcrest_library",
@@ -14,9 +13,8 @@ java_test(
 )
 
 java_test(
-    name = "HelloControllerIntegrationTest",
+    name = "HelloControllerIT",
     srcs = ["HelloControllerIT.java"],
-    test_class = "hello.HelloControllerIT",
     deps = [
         "//api/src/main/java/com/example/myproject:lib",
         "@maven//:org_hamcrest_hamcrest_library",

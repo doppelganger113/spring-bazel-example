@@ -1,6 +1,5 @@
 package com.example.myproject;
 
-import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.*;
 
 import java.net.URL;
@@ -33,9 +32,9 @@ public class HelloControllerIT {
   }
 
   @Test
-  public void getHello() throws Exception {
+  public void getHello() {
     ResponseEntity<String> response = template.getForEntity(base.toString(),
       String.class);
-    assertThat(response.getBody(), equalTo("Greetings from Spring Boot!"));
+    assertEquals(response.getBody(), "Greetings from Spring Boot!");
   }
 }

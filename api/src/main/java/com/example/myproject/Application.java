@@ -26,6 +26,7 @@ public class Application {
         System.out.println(beanName);
       }
 
+      System.out.println("Version: " + System.getProperty("java.version"));
     };
   }
 }
