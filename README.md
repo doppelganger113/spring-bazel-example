@@ -5,6 +5,8 @@ inside a monorepo. Focus is on Bazel v4 as it is the first LTS version.
 
 # Requirements
  - **InteliJ** version **2020.2.4** and **Bazel plugin** so that InteliJ can properly map dependencies
+ - Appropriate version of Java installed (8 or larger)
+ - [Bazelisk](https://github.com/bazelbuild/bazelisk) wrapper for user-friendly commands
 
 # Setup
  - Install Java and set `JAVA_HOME` environment variable to your Java sdk
@@ -16,19 +18,17 @@ inside a monorepo. Focus is on Bazel v4 as it is the first LTS version.
 # Commands
  - Build
     ```bash
-    bazel build '...' 
+    bazelisk build '...' 
     ```
  - Run myproject app
     ```bash
-    bazel run //api/src/main/java/com/example/myproject:app
+    bazelisk run //api/src/main/java/com/example/myproject:app
     ``` 
  - Test all
     ```bash
-    bazel test //... 
+    bazelisk test //... 
     ```
  - Clean/purge
     ```bash
-    bazel clean --expunge 
+    bazelisk clean --expunge 
     ```
-
-## 
