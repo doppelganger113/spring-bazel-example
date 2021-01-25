@@ -1,0 +1,36 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the action will run. 
+on:
+  # Triggers the workflow on push or pull request events but only for the master branch
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Install Bazelisk
+        uses: vsco/bazelisk-action@v1.0.0
+        with:
+          # [required]
+          # Version of Bazelisk we would like to install, defaults to 1.5.0
+          version: '1.7.4'
+          # [required]
+          # Install path for Bazelisk binaries, defaults to ./.local/bin
+          bazel-install-path: './.local/bin'
+          # [required]
+          # The OS of the system that wishes to install Bazelisk. Can be 'darwin' or 'linux'
+          os: 'linux'
+      - name: Build
+        run: bazelisk build '...'
