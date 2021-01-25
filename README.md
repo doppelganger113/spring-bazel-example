@@ -1,5 +1,7 @@
 # Spring boot monorepo with Bazel
 
+![CI](https://github.com/doppelganger113/spring-bazel-example/workflows/CI/badge.svg?branch=master)
+
 Sample of using [Bazel](https://docs.bazel.build/versions/3.7.0/getting-started.html) with multiple Spring boot projects 
 inside a monorepo. Focus is on Bazel v4 as it is the first LTS version.
 
