@@ -19,9 +19,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-
-      - name: actions-bazelisk
-        uses: suyash/actions-bazelisk@v1
+        
+      - name: Setup Bazelisk
+        uses: actions/bazelisk-setup-action@v1.0
 
       - name: Build
         run: bazelisk build '...'
